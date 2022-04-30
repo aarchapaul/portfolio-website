@@ -1,0 +1,133 @@
+.i{
+    display: flex;
+    height: 100vh;
+}
+.i-left{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.i-right{
+    display: flex;
+    flex: 1;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #daaa7eff;
+}
+.i-left-wrapper{
+    padding: 50px;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.i-intro{
+    font-size: 30px;
+    font-weight: 300; 
+}
+.i-name{
+    font-size: 60px;
+}
+.i-title{
+    display: flex;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #995a39ff;
+    align-items: center;
+    
+}
+.i-bg{
+   /* clip-path: circle(50% at 50% 50%);*/
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    align-items: center;
+}
+.i-img{
+    object-fit: cover;
+    position: absolute;
+    clip-path: circle(50% at 50% 50%);
+    align-items: center;
+}
+.i-button{
+    cursor: pointer;
+    display: flex;
+    transition: all .3s ease;
+    font-weight: bold;
+    cursor: pointer;
+    align-items: center;
+    font-size: 20px;
+}
+
+.i-button > .arrow {
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid #ffff;
+    border-bottom: 2px solid #ffff;
+    position: relative;
+    transform: rotate(-45deg);
+    margin: 0 6px;
+    transition: all .3s ease;
+}
+
+.i-button > .arrow::before {
+    display: block;
+    background-color: currentColor;
+    width: 3px;
+    transform-origin: bottom right;
+    height: 2px;
+    position: absolute;
+    opacity: 0;
+    bottom: calc(-2px / 2);
+    transform: rotate(45deg);
+    transition: all .3s ease;
+    content: "";
+    right: 0;
+}
+.i-button:hover > .arrow {
+    transform: rotate(45deg) translate(4px, 4px);
+    border-color: text-hover-color;
+}
+.i-button:hover > .arrow::before {
+    opacity: 1;
+    width: 8px;
+}
+.i-button:hover {
+    background-color: #daaa7eff;
+    color: #fff;
+}
+
+@media screen and (max-width: 480px) {
+    .i {
+      flex-direction: column;
+    }
+  
+    .i-left-wrapper {
+      padding: 10px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100%;
+    }
+    .i-img{
+        height: 40vh;
+        width: auto;
+    }
+    .i-name{
+        font-size: 50px;
+    }
+    .i-title{
+        padding: 10px;
+    }
+    .i-desc{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+    }
+  }
